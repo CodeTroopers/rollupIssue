@@ -1,0 +1,17 @@
+{
+  "name": "rollupIssue",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "rollup": "^0.45.2"
+  },
+  "author": "CodeTroopers",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeTroopers/rollupIssue.git"
+  }
+}
