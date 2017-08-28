@@ -1,18 +1,19 @@
-export default [{
-	entry: "main.js",
-	format: "cjs",
-	plugins: [],
-	dest: "dist/bundle.js"
-}, {
-	entry: "tests/unit/test.js",
-	format: "cjs",
+export default {
+	input: "main.js",
 	plugins: [
 		{
-			resolveId(id){
-				throw new Error("Unexpected exception");
-			}		
+			resolveId: function (id, importer) {
+				let modulePath = /foo/.test(id) ? "./foo.js" : undefined;
+				if (modulePath)
+					return "./foo.js";
+				
+				// if no path was found, null must be returned to keep the plugin chain!
+				return null;
+			}
 		}
 	],
-	external: id => /bundle/.test(id),
-	dest: "dist/tests.js"
-}];
+	output: {
+		file: "dist/bundle.js",
+		format: "cjs"
+	}
+};

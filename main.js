@@ -1,4 +1,4 @@
-import Foo from "./foo";
+import Foo from "foo";
 
 export default function main() {
 	let foo = new Foo();
